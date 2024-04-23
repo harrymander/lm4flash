@@ -20,6 +20,8 @@ jobs:
             mingw-w64-x86_64-pkg-config
       - name: Build
         shell: msys2 {0}
+        env:
+          USE_STATIC_LIBS: "1"
         run: make release
       - name: Upload artifact
         uses: actions/upload-artifact@v4
